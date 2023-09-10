@@ -1,0 +1,17 @@
+import string
+
+def word_frequency(sentence):
+    translator = str.maketrans("", "", string.punctuation)
+    sentence = sentence.translate(translator).lower().split()
+    frequency = {}
+
+    for word in sentence:
+        frequency[word] = frequency.get(word, 0) + 1
+
+    return frequency
+
+
+if __name__ == "__main__":
+    sentence = "This is a test sentence. This sentence is a test."
+    result = word_frequency(sentence)
+    print(result)
